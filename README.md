@@ -28,25 +28,25 @@ StarTrack has been built without using any Computer Vision libraries (such as Op
 
 ## Code Structure
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/code_structure.png" width="600"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/code_structure.png" width="500"/>
 
 ## Data Pipeline
 
 ## Initial Image Processing
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/frame_processing_pipeline.png" width="600"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/frame_processing_pipeline.png" width="1100"/>
 
 ## Unsupervised Machine Learning & Cluster Detection
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/step_5_identify_n_clusters.png" width="600"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/step_5_identify_n_clusters.png" width="400"/>
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/step_6_stars_overlaid.png" width="600"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/step_6_stars_overlaid.png" width="400"/>
 
 ## Star Cataloguing
 
-## Alignment
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/star_cataloguing.png" width="800"/>
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/star_cataloguing.png" width="600"/>
+## Alignment
 
 ## Stacking
 
