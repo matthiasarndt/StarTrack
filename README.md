@@ -1,7 +1,7 @@
 # StarTrack
 
 ### StarTrack is a modular Python package providing functionality for Astronomical image processing, star detection, and noise reduction. 
-* Download the Python package [here](https://github.com/matthiasarndt/StarTrack/blob/main/StarTrack_v0.1.zip)
+* Download the Python package [here](https://github.com/matthiasarndt/StarTrack/blob/main/StarTrack_v0.1.zip).
 * Download astronomical data of the Iris Nebula [here](https://www.dropbox.com/scl/fo/mxfl3nmta319p3rljnxh4/AKRRT-tVfRIa9Q5t6UU0wQ0?rlkey=csu6ess8s3lqmrlomypvjw8cv&st=s7sd0zm0&dl=0) to use the code.
 
 ## Why is StarTrack useful?
