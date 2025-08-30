@@ -34,19 +34,23 @@ StarTrack has been built without using any Computer Vision libraries (such as Op
 
 ## Initial Image Processing
 
+### Overview
+
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/frame_processing_pipeline.png" width="1100"/>
 
-## Unsupervised Machine Learning & Cluster Detection
+### Local Density Filter & Numerical Solving for Search Parameter Optimisation 
+
+## Unsupervised Machine Learning for Star Detection
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/step_5_identify_n_clusters.png" width="400"/>
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/step_6_stars_overlaid.png" width="400"/>
 
-## Star Cataloguing
+## Star Cataloguing with Intensity based Weighted Averaging
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/star_cataloguing.png" width="800"/>
 
-## Alignment
+## Alignment using Vectors
 
 ## Stacking
 
