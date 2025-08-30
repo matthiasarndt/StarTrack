@@ -1,6 +1,6 @@
 # StarTrack
 
-### StarTrack is a modular Python package providing functionality for Astronomical image processing, star detection, and noise reduction. 
+### StarTrack is a modular object-oriented Python package providing functionality for Astronomical image processing, star detection, and noise reduction. 
 * Download the Python package [here](https://github.com/matthiasarndt/StarTrack/blob/main/StarTrack_v0.1.zip).
 * Download example astronomical data of the Iris Nebula [here](https://www.dropbox.com/scl/fo/mxfl3nmta319p3rljnxh4/AKRRT-tVfRIa9Q5t6UU0wQ0?rlkey=csu6ess8s3lqmrlomypvjw8cv&st=s7sd0zm0&dl=0) to use the code yourself!
 
@@ -14,24 +14,21 @@ Any system like this will drift, as errors in tracking build up. Drift can cause
 
 To overcome this, one must take hundreds of individual images of a single object, each a few minutes in exposure, and "stack" these on top of each other to reduce the noise of the image and provide the equivalent of one very long exposure. 
 
-Due to errors in tracking, these images will never be exactly aligned. There will be differences in their rotation, translation and scaling. If data is collected across differnet locations and times, the relative rotation and position of the object being captured will vary in captured data. 
+Due to errors in tracking, these images will never be exactly aligned. There will be differences in their rotation, translation and scaling. If data is collected across different locations and times, the relative rotation and position of the object being captured will vary in captured data. 
 
 ## This is where StarTrack comes in. 
 
 Startrack is built to combine hundreds of individual exposures of astronomical data, run star detection algorithms, and to identify reference points across many images. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
 
-This stacked image can then be further image process to bring out features in the data such as intricate nebula patterns or distant supernovae in other far away galaxies.
+### StarTrack has been built without using any Computer Vision libraries (such as OpenCV), instead relying on algorithms derived from scratch, written with NumPy, SciPy and scikit-learn. 
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/reference_to_stacked_gif.gif" width="800"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/reference_to_stacked_gif.gif" width="500"/>
 
-The example above compares a single frame (on the left) with 20 frames which have been aligned and stacked with StarTrack, showing the reduction in noise. 
-
-StarTrack has been built without using any Computer Vision libraries (such as OpenCV), instead relying on algorithms derived from scratch, written with NumPy, SciPy and scikit-learn. 
+The example above compares a single frame (on the left) with 20 frames which have been aligned and stacked with StarTrack, showing the reduction in noise. This stacked image can then be further image process to bring out features in the data.
 
 ## Code Structure
 
-The code has been developed with Object-Oriented Programming in mind. Classes and methods have been written with design patterns in mind (specifically a Pipeline design pattern), and use inheritance and composition to create efficient, modular, anda clean code. 
-
+The code has been developed and structured with Object-Orientation. Classes and methods have been written with design patterns in mind (specifically a Pipeline design pattern), and use inheritance and composition.
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/code_structure.png" width="500"/>
 
 ## Data Pipeline
