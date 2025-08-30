@@ -29,6 +29,7 @@ The example above compares a single frame (on the left) with 20 frames which hav
 ## Code Structure
 
 The code has been developed and structured with Object-Orientation. Classes and methods have been written with design patterns in mind (specifically a Pipeline design pattern), and use inheritance and composition.
+
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/code_structure.png" width="500"/>
 
 ## Data Pipeline
@@ -52,6 +53,10 @@ The code has been developed and structured with Object-Orientation. Classes and 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/star_cataloguing.png" width="800"/>
 
 ## Alignment using Vectors
+
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_reference_frame.png" width="1100"/>
+
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_addition_frame.png" width="1100"/>
 
 ## Stacking
 
