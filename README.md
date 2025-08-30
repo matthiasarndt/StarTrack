@@ -6,19 +6,19 @@
 
 ## Why is StarTrack useful?
 
-Imaging objects in deep space is all about noise reduction. 
+The biggest challenge in deep space astronomy imaging is noise reduction. 
 
-Many nebulae, galaxies and star clusters are extremely dim, and therefore long exposures are required to capture their detail. Due to the Earth's rotation it is necessary for an astronomic imaging system to be capable of tracking the night sky as an object moves. 
+Many nebulae, galaxies and star clusters are extremely dim, and therefore long exposures are required to adequately capture their detail. Due to the Earth's rotation it is necessary for imaging systems to be capable of tracking the night sky.
 
-Any system like this will drift, as errors in tracking build up. Drift can cause stars to become badly distorted and for images to lose depth and clarity. 
+As tracking errors build up, drift will become visible in captured data. Drift can cause stars to become distorted and for images to lost depth and clarity. 
 
-To overcome this, one must take hundreds of individual images of a single object, each a few minutes in exposure, and "stack" these on top of each other to reduce the noise of the image and provide the equivalent of one very long exposure. 
+To overcome this, hundreds of individual images (called frames) are taken of a single object, with each being exposed for a few minutes. These frames are then "stacked" top of each other to reduce the noise of the overall image - thereby providing the equivalent of one very long exposure. 
 
-Due to errors in tracking, these images will never be exactly aligned. There will be differences in their rotation, translation and scaling. If data is collected across different locations and times, the relative rotation and position of the object being captured will vary in captured data. 
+Due to errors in tracking, the individual frames will have the exact same alignment. There will be differences in their rotation, translation and scaling. Data collected across different geographic locations and times can have particularly large variations in the relative position and rotation of a deep space object (DSO) in a frame. 
 
-## This is where StarTrack comes in. 
+## This is where StarTrack comes in!
 
-Startrack is built to combine hundreds of individual exposures of astronomical data, run star detection algorithms, and to identify reference points across many images. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
+Startrack is built to combine hundreds of individual exposures of astronomical data. It does this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
 
 ### StarTrack has been built without using any Computer Vision libraries (such as OpenCV), instead relying on algorithms derived from scratch, written with NumPy, SciPy and scikit-learn. 
 
