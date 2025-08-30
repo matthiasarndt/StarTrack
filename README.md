@@ -20,8 +20,19 @@ Startrack is built to combine hundreds of individual exposures of astronomical d
 
 This stacked image can then be further image process to bring out features in the data such as intricate nebula patterns or distant supernovae in other far away galaxies.
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/stacking_reference_frame_comparison.png" width="1000"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/reference_to_stacked_gif.gif" width="800"/>
 
 The example above compares a single frame (on the left) with 20 frames which have been aligned and stacked with StarTrack, showing the reduction in noise. 
 
-StarTrack has been built without using any Computer Vision libraries (such as OpenCV), instead relying on manually derived algorithms written with NumPy, SciPy and scikit-learn.  
+StarTrack has been built without using any Computer Vision libraries (such as OpenCV), instead relying on algorithms derived from scratch, written with NumPy, SciPy and scikit-learn. 
+
+## Code Structure
+
+## Initial Image Processing
+
+## Star Cataloguing
+
+## Alignment
+
+## Stacking
+
