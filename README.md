@@ -47,27 +47,32 @@ There are three sections below, which each describe one of the main processing s
 
 ## Light Frame Processing
 
-### Overview
+### 1. Initial Image Processing
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/frame_processing_pipeline.png" width="1100"/>
 
-### Local Density Filter & Numerical Solving for Search Parameter Optimisation 
+### 2. Image Filtering & Star Detection Parameter Optimisation
 
-### Unsupervised Machine Learning for Star Detection
+### 3. Unsupervised Machine Learning for Star Detection
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_5_identify_n_clusters.png" width="400"/>
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_6_stars_overlaid.png" width="400"/>
 
-### Star Cataloguing with Intensity based Weighted Averaging
+### 4. Star Cataloguing
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/star_cataloguing.png" width="800"/>
 
 ## Frame Alignment
 
+### 1. Alignment Star Identification
+
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_reference_frame.png" width="1100"/>
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_addition_frame.png" width="1100"/>
 
+### 2. Frame Translation & Rotation
+
 ## Stacking
 
+As of v0.1 of StarTrack, the only stacking method implemented reduces noise by taking a mean average of all aligned frames. Future releases will include other stacking methods which will reject pixels not within a set number of standard deviations from the mean (a technique called sigma clipping).
