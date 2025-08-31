@@ -49,22 +49,49 @@ There are three sections below, which each describe one of the main processing s
 
 ### 1. Initial Image Processing
 
+The first step is to pre-process a single frame. Data is converted to be in 8-bit monochrome, and is then thresholded (to isolate stars) and blurred (Gaussian blur), to remove the effects of noise on the shapes of stars. 
+
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/image_pipeline_1_mono_threshold_blur.png" width="1100"/>
 
 ### 2. Image Filtering & Star Detection Parameter Optimisation
+
+Next, a filter is run across this image. At all pixel co-ordinates in the image where a bright pixel is identifed (defined as a pixel of brightness = 255), an area is searched sorrounding this pixel to search for other bright pixels. 
+
+The rationale is that large stars are clusters of many bright pixels. 
+
+This search algorithm has two parameters, the search radius, and the star detection count (the number of bright pixels within the search radius required for the algorithm to decide a star is present). 
+
+If the number if pixels is above this threshold, it's location is stored. Once the filtering algorithm has been run, only the largest clusters of bright pixels remain. 
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/image_pipeline_2_crop_filtered.png" width="1100"/>
 
 ### 3. Unsupervised Machine Learning for Star Detection
 
+Unsupervised machine learning (k_means) is used to determine the number of stars identified, by assessing the clusters of pixels. k_means is run for a large sweep of cluster numbers, and the silhouette score for each attempt is stored. 
+
+Silhouette score measures how well defined and different clusters are from each other. To identify the number of clusters in an image, the n_clusters estimate with the highest silhouette score is used. This is an alternative to elbow method, which assesses how the centroid error varies with estimates for n_clusters.
+
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_5_identify_n_clusters.png" width="475"/>
+
+The results from unsupervised learning are used to determine the centroids and bright pixel count (number of labels) in each cluster. This information is then plotted on the original monochrome frame, to show the n stars brightest stars which have been detected:  
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_6_stars_overlaid.png" width="1100"/>
 
-### 4. Star Cataloguing
+### 4. Numerical Solving to Optimise Search Parameters 
+
+The two algorithms above (unsupervised machine learning and filtering) are used to find the n largest stars in an image. 
+
+To do this, the search parameters must be tuned so that they discard the right amount of stars. This tuning will be different for every part of the night sky, as the density of stars varies. The tuning has been implemented with a numerical solver. Here, a bisection solver has been used to determine the star detection count within a given radius which will give the largest n stars. n can vary but is typically set to 5.  
+
+### 5. Star Cataloguing
+
+Although the centroid information provided by unsuperivsed learning is broadly accurate, it only takes into account the brightest pixels of a star when determining it's centre. To get a more accurate estimate, which is required later during the alignment process, the following star cataloguing algorithm is used.  
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/star_cataloguing.png" width="800"/>
 
+A bounding box is drawn around each cluster centroid, and a light intensity based average of the monochrome data is inside this bouding box is used to find the centre of a star based on the brightness of all pixels inthe star. 
+
+This data is stored in a star catalogue, and is the main output of the image processing stage and star detection stage. The information is used in the following steps for star identification and frame alignment.  
 ## Frame Alignment
 
 ### 1. Alignment Star Identification
