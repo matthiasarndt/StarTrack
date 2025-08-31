@@ -34,9 +34,9 @@ The code has been developed and structured with Object-Orientation. Classes and 
 
 ## Data Pipeline
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/data_pipeline" width="500"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/data_pipeline.png" width="800"/>
 
-## Initial Image Processing
+## Light Frame Processing
 
 ### Overview
 
@@ -44,17 +44,17 @@ The code has been developed and structured with Object-Orientation. Classes and 
 
 ### Local Density Filter & Numerical Solving for Search Parameter Optimisation 
 
-## Unsupervised Machine Learning for Star Detection
+### Unsupervised Machine Learning for Star Detection
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_5_identify_n_clusters.png" width="400"/>
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_6_stars_overlaid.png" width="400"/>
 
-## Star Cataloguing with Intensity based Weighted Averaging
+### Star Cataloguing with Intensity based Weighted Averaging
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/star_cataloguing.png" width="800"/>
 
-## Alignment using Vectors
+## Frame Alignment
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_reference_frame.png" width="1100"/>
 
