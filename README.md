@@ -120,13 +120,14 @@ As of v0.1 of StarTrack, the only stacking method implemented reduces noise by t
 
 The following features will be integrated into StarTrack to improve functionality:
 
-1) RAW data (NEF) support
-2) RGB support
-3) Improved robustness of star alignment algorithms to search multiple stars to determine the reference star
-4) Improved status logging rather than verbosity 
-5) Integrated plotting with logging system so that intermediates are plotted
-6) A new subclass called StackMethod, with methods such as sigma clipping, rejection etc. to improve stacking methods and reduce noise
-7) Addition of data calibration methods, including a new class called Dark Frame, which inherits from LightFrame, and can substract bais noise, dust spots, and remove frame vignetting
-8) New data processing techniques, such as background calibration, curves adjustments and dynamic range increase
-9) A GUI 
+1) Improved documentation
+2) RAW data (NEF) support
+3) RGB support
+4) Improved robustness of star alignment algorithms to search multiple stars to determine the reference star
+5) Improved status logging rather than verbosity 
+6) Integrated plotting with logging system so that intermediates are plotted
+7) A new subclass called StackMethod, with methods such as sigma clipping, rejection etc. to improve stacking methods and reduce noise
+8) Addition of data calibration methods, including a new class called Dark Frame, which inherits from LightFrame, and can substract bais noise, dust spots, and remove frame vignetting
+9) New data processing techniques, such as background calibration, curves adjustments and dynamic range increase
+10) A GUI 
 
