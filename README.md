@@ -28,11 +28,11 @@ The example above compares a single frame (on the left) with 20 frames which hav
 
 ## Code Structure
 
-The code has been developed and structured with Object-Orientation. Classes and methods have been written with design patterns in mind (specifically a Pipeline design pattern), and use inheritance and composition. Inputs into the code use dataclasses, which are frozen to avoid mutability and keep the flow of data tracable. 
+The code has been developed and structured with Object-Orientation. Classes and methods have been written with design patterns in mind (specifically a Pipeline design pattern), and use inheritance and composition. Inputs into the code use dataclasses, which are frozen to avoid mutability and keep the flow of data traceable. 
 
 The three classes are LightFrame, CoupledFrames, and AstroPhoto. AstroPhoto is the highest level class, and is called by the user. Each class has the following functionality:
 * LightFrame: reading of raw data, processing of raw data, star detection, star cataloguing
-* CoupledFrame:identification of alignment stars and frame alignment between two LightFrame instances 
+* CoupledFrame: identification of alignment stars and frame alignment between two LightFrame instances 
 * AstroPhoto: wrapper for all functionality, running algorithms to process, align, and stack all frames  
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/code_structure.png" width="500"/>
@@ -53,15 +53,15 @@ The first step is to pre-process a single frame. Data is converted to be in 8-bi
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/image_pipeline_1_mono_threshold_blur.png" width="1100"/>
 
-### 2. Image Filtering & Star Detection Parameter Optimisation
+### 2. Image Filtering for Star Detection
 
-Next, a filter is run across this image. At all pixel co-ordinates in the image where a bright pixel is identifed (defined as a pixel of brightness = 255), an area is searched sorrounding this pixel to search for other bright pixels. 
+Next, a filter is run across this frame. At all co-ordinates in the frame where a bright pixel is identified (defined as a pixel of brightness = 255), the area sorrounding this pixel is searched for other bright pixels. 
 
-The rationale is that large stars are clusters of many bright pixels. 
+The rationale behind this is that large stars are clusters of many bright pixels. 
 
-This search algorithm has two parameters, the search radius, and the star detection count (the number of bright pixels within the search radius required for the algorithm to decide a star is present). 
+This search algorithm has two parameters, the search radius, and the star detection count. Star detection count is the number of bright pixels within the search radius required for the algorithm to decide a star is present. 
 
-If the number if pixels is above this threshold, it's location is stored. Once the filtering algorithm has been run, only the largest clusters of bright pixels remain. 
+If the number of pixels is above this threshold, it's location is stored. Once the filtering algorithm has been run, only the largest clusters of bright pixels remain. All small clusters of bright pixels are discarded. 
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/image_pipeline_2_crop_filtered.png" width="1100"/>
 
@@ -77,7 +77,7 @@ The results from unsupervised learning are used to determine the centroids and b
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_6_stars_overlaid.png" width="1100"/>
 
-### 4. Numerical Solving to Optimise Search Parameters 
+### 4. Numerical Solving to Optimise Star Detection Search Parameters 
 
 The two algorithms above (unsupervised machine learning and filtering) are used to find the n largest stars in an image. 
 
@@ -89,18 +89,19 @@ Although the centroid information provided by unsuperivsed learning is broadly a
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/star_cataloguing.png" width="800"/>
 
-A bounding box is drawn around each cluster centroid, and a light intensity based average of the monochrome data is inside this bouding box is used to find the centre of a star based on the brightness of all pixels inthe star. 
+A bounding box is drawn around each cluster centroid, and a light intensity based average of the monochrome data is inside this bounding box produces the the centre of a star. This centre estimate is baesd on the brightness of all pixels around the star. 
 
 This data is stored in a star catalogue, and is the main output of the image processing stage and star detection stage. The information is used in the following steps for star identification and frame alignment.  
+
 ## Frame Alignment
 
 ### 1. Alignment Star Identification
 
-The largest star in the reference frame is labelled as the reference star. All other identified stars in the reference image are alignment stars. To identify these stars in other images, the vector from each alignment star to the reference star is calculated.
+The largest star in the reference frame is labelled as the reference star. All other identified stars in the reference image are alignment stars. To identify these stars in other frames, the vector from each alignment star to the reference star is calculated.
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_reference_frame.png" width="1100"/>
 
-In each additional frame, an increased number of stars are identified. if n stars are identified in the reference image, 2n stars are identified in each additional image. This is to guarantee that the stars identified in the reference image are also identified in the additional frames. Differences between frames, such as noise and the position of the target object in the frame, may change which star are identified by the algorithm - and therefore in the additional frame more stars are identified than are needed. 
+In each additional frame an increased number of stars are identified. if n stars are identified in the reference frame, 2n stars are identified in each additional frame. This is to guarantee that the stars identified in the reference frame are also identified in the additional frames. Differences between frames, such as noise and the position of the target object in the frame, may change which stars are identified by the algorithms - and therefore in the additional frame more stars are identified than are needed to ensure overlap.
 
 The stars identified are then cross referenced with alignment vectors from the reference image. 
 
