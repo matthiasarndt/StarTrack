@@ -22,7 +22,7 @@ Startrack is built to combine hundreds of individual exposures of astronomical d
 
 ### StarTrack has been built without using any Computer Vision libraries (such as OpenCV), instead relying on algorithms derived from scratch, written with NumPy, SciPy and scikit-learn. 
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/reference_to_stacked_gif.gif" width="500"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/reference_to_stacked_gif.gif" width="500"/>
 
 The example above compares a single frame (on the left) with 20 frames which have been aligned and stacked with StarTrack, showing the reduction in noise. This stacked image can then be further image process to bring out features in the data.
 
@@ -30,9 +30,11 @@ The example above compares a single frame (on the left) with 20 frames which hav
 
 The code has been developed and structured with Object-Orientation. Classes and methods have been written with design patterns in mind (specifically a Pipeline design pattern), and use inheritance and composition.
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/code_structure.png" width="500"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/code_structure.png" width="500"/>
 
 ## Data Pipeline
+
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/data_pipeline" width="500"/>
 
 ## Initial Image Processing
 
@@ -44,13 +46,13 @@ The code has been developed and structured with Object-Orientation. Classes and 
 
 ## Unsupervised Machine Learning for Star Detection
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/step_5_identify_n_clusters.png" width="400"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_5_identify_n_clusters.png" width="400"/>
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/step_6_stars_overlaid.png" width="400"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_6_stars_overlaid.png" width="400"/>
 
 ## Star Cataloguing with Intensity based Weighted Averaging
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/star_cataloguing.png" width="800"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/star_cataloguing.png" width="800"/>
 
 ## Alignment using Vectors
 
