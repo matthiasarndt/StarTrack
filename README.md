@@ -10,11 +10,11 @@ The biggest challenge in deep space astronomy imaging is noise reduction.
 
 Many nebulae, galaxies and star clusters are extremely dim, and therefore long exposures are required to adequately capture their detail. Due to the Earth's rotation it is necessary for imaging systems to be capable of tracking the night sky.
 
-As tracking errors build up, drift will become visible in captured data. Drift can cause stars to become distorted and for images to lost depth and clarity. 
+As tracking errors build up, drift becomes visible in captured images. Drift can cause stars to become distorted and for images to lose depth and clarity. 
 
-To overcome this, hundreds of individual images (called frames) are taken of a single object, with each being exposed for a few minutes. These frames are then "stacked" top of each other to reduce the noise of the overall image - thereby providing the equivalent of one very long exposure. 
+To overcome this, hundreds of individual images (called frames) are taken of a single object, with each being exposed for a few minutes. These frames are then "stacked" on top of each other to reduce the noise of the overall image - thereby providing the equivalent of one very long exposure. 
 
-Due to errors in tracking, the individual frames will have the exact same alignment. There will be differences in their rotation, translation and scaling. Data collected across different geographic locations and times can have particularly large variations in the relative position and rotation of a deep space object (DSO) in a frame. 
+Due to variations in tracking, none of the frames will be aligned exactly the same. There will be differences in their rotation, translation and scaling. Data collected across different geographic locations and times of the year can have particularly large variations in the relative position and rotation of a deep space object (DSO) in a frame. 
 
 ## This is where StarTrack comes in!
 
