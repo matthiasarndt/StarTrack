@@ -57,7 +57,7 @@ There are three sections below, which each describe one of the main processing s
 
 ### 3. Unsupervised Machine Learning for Star Detection
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_5_identify_n_clusters.png" width="550"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_5_identify_n_clusters.png" width="475"/>
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_6_stars_overlaid.png" width="1100"/>
 
@@ -69,7 +69,13 @@ There are three sections below, which each describe one of the main processing s
 
 ### 1. Alignment Star Identification
 
+The largest star in the reference frame is labelled as the reference star. All other identified stars in the reference image are alignment stars. To identify these stars in other images, the vector from each alignment star to the reference star is calculated.
+
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_reference_frame.png" width="1100"/>
+
+In each additional frame, an increased number of stars are identified. if n stars are identified in the reference image, 2n stars are identified in each additional image. This is to guarantee that the stars identified in the reference image are also identified in the additional frames. Differences between frames, such as noise and the position of the target object in the frame, may change which star are identified by the algorithm - and therefore in the additional frame more stars are identified than are needed. 
+
+The stars identified are then cross referenced with alignment vectors from the reference image. 
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_addition_frame.png" width="1100"/>
 
