@@ -20,7 +20,7 @@ Due to variations in tracking, none of the frames will be aligned exactly the sa
 
 Startrack is built to combine hundreds of individual exposures of astronomical data. It does this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
 
-### StarTrack has been built without using any Computer Vision libraries (such as OpenCV), instead relying on algorithms derived from scratch, written with NumPy, SciPy and scikit-learn. 
+### StarTrack has been built without any Computer Vision libraries (such as OpenCV), instead relying on algorithms derived from scratch, written with NumPy, SciPy and scikit-learn. 
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/reference_to_stacked_gif.gif" width="500"/>
 
@@ -28,13 +28,22 @@ The example above compares a single frame (on the left) with 20 frames which hav
 
 ## Code Structure
 
-The code has been developed and structured with Object-Orientation. Classes and methods have been written with design patterns in mind (specifically a Pipeline design pattern), and use inheritance and composition.
+The code has been developed and structured with Object-Orientation. Classes and methods have been written with design patterns in mind (specifically a Pipeline design pattern), and use inheritance and composition. Inputs into the code use dataclasses, which are frozen to avoid mutability and keep the flow of data tracable. 
+
+The three classes are LightFrame, CoupledFrames, and AstroPhoto. AstroPhoto is the highest level class, and is called by the user. Each class has the following functionality:
+* LightFrame: reading of raw data, processing of raw data, star detection, star cataloguing
+* CoupledFrame:identification of alignment stars and frame alignment between two LightFrame instances 
+* AstroPhoto: wrapper for all functionality, running algorithms to process, align, and stack all frames  
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/code_structure.png" width="500"/>
 
 ## Data Pipeline
 
+Raw data goes through the following pipeline, concluding with the generation of a stacked frame. 
+
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/data_pipeline.png" width="800"/>
+
+There are three sections below, which each describe one of the main processing steps highlighted above and the respective algorithms implemented. 
 
 ## Light Frame Processing
 
