@@ -81,6 +81,10 @@ The stars identified are then cross referenced with alignment vectors from the r
 
 ### 2. Frame Translation & Rotation
 
+Now that the co-ordinates of all alignment stars are known in each image, the image transformation can be undertaken to align them. An "affine" transformation (more information [here]https://en.wikipedia.org/wiki/Affine_transformation), using scikit-learn, has been implemented.
+
+An affine transformation has been used because images captured from an optical telescope (such as a refractor) may be subject to visual distortions (e.g. stretching near the edge of a frame), leading to non-linearities across a star field. 
+
 ## Stacking
 
 As of v0.1 of StarTrack, the only stacking method implemented reduces noise by taking a mean average of all aligned frames. Future releases will include other stacking methods which will reject pixels not within a set number of standard deviations from the mean (a technique called sigma clipping).
