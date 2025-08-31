@@ -59,7 +59,7 @@ There are three sections below, which each describe one of the main processing s
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_5_identify_n_clusters.png" width="400"/>
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_6_stars_overlaid.png" width="400"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_6_stars_overlaid.png" width="1100"/>
 
 ### 4. Star Cataloguing
 
