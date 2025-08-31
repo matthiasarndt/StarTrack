@@ -57,7 +57,7 @@ There are three sections below, which each describe one of the main processing s
 
 ### 3. Unsupervised Machine Learning for Star Detection
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_5_identify_n_clusters.png" width="400"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_5_identify_n_clusters.png" width="550"/>
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_6_stars_overlaid.png" width="1100"/>
 
