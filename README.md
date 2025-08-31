@@ -49,9 +49,11 @@ There are three sections below, which each describe one of the main processing s
 
 ### 1. Initial Image Processing
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/frame_processing_pipeline.png" width="1100"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/image_pipeline_1_mono_threshold_blur.png" width="1100"/>
 
 ### 2. Image Filtering & Star Detection Parameter Optimisation
+
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/image_pipeline_2_crop_filtered.png" width="1100"/>
 
 ### 3. Unsupervised Machine Learning for Star Detection
 
