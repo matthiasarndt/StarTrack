@@ -22,7 +22,7 @@ Startrack is built to combine hundreds of individual exposures of astronomical d
 
 ### StarTrack has been built without any Computer Vision libraries (such as OpenCV), instead relying on algorithms derived from scratch, written with NumPy, SciPy and scikit-learn. 
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/reference_to_stacked_gif.gif" width="500"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82_reference_to_stacked.gif" width="900"/>
 
 The example above compares a single frame (on the left) with 20 frames which have been aligned and stacked with StarTrack, showing the reduction in noise. This stacked image can then be further image process to bring out features in the data.
 
