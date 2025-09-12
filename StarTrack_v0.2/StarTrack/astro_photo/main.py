@@ -130,6 +130,7 @@ class AstroPhoto:
         return self
 
 if __name__ == "__main__":
-    iris_nebula = AstroPhoto(data_directory=Path('D:\_Local\OneDrive\Astro\AstroCode\Data2'))
+    iris_nebula = AstroPhoto(data_directory=Path('C:\...'))
     iris_nebula.align_frames()
+
     iris_nebula.stack_aligned_frames()
