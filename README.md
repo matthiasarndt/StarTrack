@@ -4,6 +4,8 @@
 * Download the Python package [here](https://github.com/matthiasarndt/StarTrack/blob/main/StarTrack_v0.2).
 * Download example astronomical data of the Iris Nebula [here](https://www.dropbox.com/scl/fo/mxfl3nmta319p3rljnxh4/AKRRT-tVfRIa9Q5t6UU0wQ0?rlkey=csu6ess8s3lqmrlomypvjw8cv&st=s7sd0zm0&dl=0) to use the code yourself!
 
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82_reference_to_stacked.gif" width="900"/>
+
 ## Why is StarTrack useful?
 
 The biggest challenge in deep space astronomy imaging is noise reduction. 
@@ -21,10 +23,6 @@ Due to variations in tracking, none of the frames will be aligned exactly the sa
 Startrack is built to combine hundreds of individual exposures of astronomical data. It does this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
 
 ### StarTrack has been built without any Computer Vision libraries (such as OpenCV), instead relying on algorithms derived from scratch, written with NumPy, SciPy and scikit-learn. 
-
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82_reference_to_stacked.gif" width="900"/>
-
-The example above compares a single frame (on the left) with 20 frames which have been aligned and stacked with StarTrack, showing the reduction in noise. This stacked image can then be further image process to bring out features in the data.
 
 ## Code Structure
 
