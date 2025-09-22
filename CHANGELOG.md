@@ -1,3 +1,10 @@
+### Version 0.2.1:
+* Implemented star reduction solving algorithm, using line solving and gradient descent based methods to isolate a single bright star in a cluster of bright stars. This has made star registration far more robust.
+* Implemented parallelisation, massively improving performance of star registration, alignment, and stacking process.
+* Refactored code to reduce memory usage and improve garbage collection to improve parallelisation on reduced memory.
+* Improved star_field class, with code refactoring, new functions, improved comments, and reduced results printing. 
+* Improved example.py code with new and improved comments on input settings. 
+
 ### Version 0.2:
 * Implemented new star cataloguing algorithms, improving star detection by removing object and filtering objects falsely identified as a single bright star.
 * Implemented new star alignment algorithms to account for distance and angle of an alignment star from the reference alignment star, allowing for more reliable star identification.
