@@ -5,7 +5,7 @@
 * Improved star_field class, with code refactoring, new functions, improved comments, and reduced results printing. 
 * Improved example.py code with new and improved comments on input settings. 
 
-### Version 0.2:
+### Version 0.2.0:
 * Implemented new star cataloguing algorithms, improving star detection by removing object and filtering objects falsely identified as a single bright star.
 * Implemented new star alignment algorithms to account for distance and angle of an alignment star from the reference alignment star, allowing for more reliable star identification.
 * Improved star alignment with new star analysis algorithms. Rather than assuming the largest star is always the reference alignment star, stars are analysed in descending order of size until a match is made. Improves robustness of image alignment and stacking for noisy images, where star size may vary significantly. 
