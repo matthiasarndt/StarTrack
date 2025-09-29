@@ -3,6 +3,7 @@
 ### StarTrack is a modular object-oriented Python package providing functionality for Astronomical image processing, star detection, and noise reduction. 
 * Download the Python package [here](https://github.com/matthiasarndt/StarTrack/blob/main/StarTrack_v0.2.1).
 * Download example astronomical data of the Iris Nebula [here](https://www.dropbox.com/scl/fo/mxfl3nmta319p3rljnxh4/AKRRT-tVfRIa9Q5t6UU0wQ0?rlkey=csu6ess8s3lqmrlomypvjw8cv&st=s7sd0zm0&dl=0) to try the code.
+* I have complied a brief slidepack on StarTrack [here](https://github.com/matthiasarndt/StarTrack/blob/main/Matthias_Arndt_Personal_Project_Python.pdf).
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82_reference_to_stacked.gif" width="900"/>
 
@@ -18,7 +19,7 @@ To overcome this, hundreds of individual images (called frames) are taken of a s
 
 Due to variations in tracking, none of the frames will be aligned exactly the same. There will be differences in their rotation, translation and scaling. Data collected across different geographic locations and times of the year can have particularly large variations in the relative position and rotation of a deep space object (DSO) in a frame. 
 
-## StarTrack has been designed to solve these problems. 
+## StarTrack has been designed to solve these problems:
 
 Startrack is built to combine hundreds of individual exposures of astronomical data. It does this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
 
@@ -45,11 +46,9 @@ The three classes are LightFrame, CoupledFrames, and AstroPhoto. AstroPhoto is t
 
 Raw data goes through the following pipeline, concluding with the generation of a stacked frame. 
 
-1. Light Frame Processing: All frames are imported and read in as LightFrame objects. These are processed to filter, count, and catalogue aligning stars inside an image. 
-2. Frame Alignment: Each of the frames (on the order of 10s-100s of images) are aligned with the reference frame, which is the initial frame that all other layers are compared against. This involves calculating reference vectors for each image and warping/translating the data to match the reference frame. 
-3. Stacking: As a result of frame alignment, a 3D array of data is created, where each layer represents one input frame which has been rotated/translated to match the reference frame. Data at each pixel co-ordinate are assessed and averaged to reduce noise and remove outliers. 
-<img width="3624" height="157" alt="image" src="https://github.com/user-attachments/assets/0d8db125-f88a-4380-bd81-77217c3c3dd1" />
-
+1. **Light Frame Processing**: All frames are imported and read in as LightFrame objects. These are processed to filter, count, and catalogue aligning stars inside an image. 
+2. **Frame Alignment**: Each of the frames (on the order of 10s-100s of images) are aligned with the reference frame, which is the initial frame that all other layers are compared against. This involves calculating reference vectors for each image and warping/translating the data to match the reference frame. 
+3. **Stacking**: As a result of frame alignment, a 3D array of data is created, where each layer represents one input frame which has been rotated/translated to match the reference frame. Data at each pixel co-ordinate are assessed and averaged to reduce noise and remove outliers. 
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/data_pipeline.png" width="800"/>
 
