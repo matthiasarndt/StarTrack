@@ -34,8 +34,6 @@ Startrack is built to combine hundreds of individual exposures of astronomical d
 
 ## Code Structure
 
-The code has been developed and structured with Object-Orientation. Classes and methods have been written with design patterns in mind (specifically a Pipeline design pattern), and use inheritance and composition. Inputs into the code use dataclasses, which are frozen to avoid mutability and keep the flow of data traceable. 
-
 The three classes are LightFrame, CoupledFrames, and AstroPhoto. AstroPhoto is the highest level class, and is called by the user. Each class has the following functionality:
 * LightFrame: reading of raw data, processing of raw data, star detection, star cataloguing
 * CoupledFrame: identification of alignment stars and frame alignment between two LightFrame instances 
@@ -46,6 +44,12 @@ The three classes are LightFrame, CoupledFrames, and AstroPhoto. AstroPhoto is t
 ## Data Pipeline
 
 Raw data goes through the following pipeline, concluding with the generation of a stacked frame. 
+
+1. Light Frame Processing: All frames are imported and read in as LightFrame objects. These are processed to filter, count, and catalogue aligning stars inside an image. 
+2. Frame Alignment: Each of the frames (on the order of 10s-100s of images) are aligned with the reference frame, which is the initial frame that all other layers are compared against. This involves calculating reference vectors for each image and warping/translating the data to match the reference frame. 
+3. Stacking: As a result of frame alignment, a 3D array of data is created, where each layer represents one input frame which has been rotated/translated to match the reference frame. Data at each pixel co-ordinate are assessed and averaged to reduce noise and remove outliers. 
+<img width="3624" height="157" alt="image" src="https://github.com/user-attachments/assets/0d8db125-f88a-4380-bd81-77217c3c3dd1" />
+
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/data_pipeline.png" width="800"/>
 
