@@ -1,4 +1,4 @@
-### Version 0.2.1:
+### Version 0.2.2:
 * Implemented new functionality to automatically tune the correct required threshold level when reading in a frame. This is based on the overall brightness of an image and the density of stars. This parameter is currently set manually. In a future release, threshold tuning will be further integrated to run automatically if no threshold value is specified in the initial inputs.
 * Created a slidepack detailing StarTrack and how it works, see [here](https://github.com/matthiasarndt/StarTrack/blob/main/Matthias_Arndt_Personal_Project_Python.pdf).
 * Improved parallelisation process so that a failed frame alignment will no longer kill the pool, and keep the code running.
@@ -25,5 +25,5 @@
 * Added support for more image formats: Nikon RAW (.NEF) and .PNG. 
 * General bugfixes and code improvements (refactoring, variable naming).
 
-### Version 0.1: 
+### Version 0.1.0: 
 - Initial working version, with AstroPhoto, CoupledFrames, and LightFrame classes.
