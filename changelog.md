@@ -1,5 +1,5 @@
 ### Version 0.2.1:
-* Implemented new functionality to automatically tune the correct required threshold level when reading in a frame. This is based on the overall brightness of an image and the density of stars. This parameter is currently set manually. In a future release, the threshold tuning will be further integrated.
+* Implemented new functionality to automatically tune the correct required threshold level when reading in a frame. This is based on the overall brightness of an image and the density of stars. This parameter is currently set manually. In a future release, threshold tuning will be further integrated to run automatically if no threshold value is specified in the initial inputs.
 * Created a slidepack detailing StarTrack and how it works, see [here](https://github.com/matthiasarndt/StarTrack/blob/main/Matthias_Arndt_Personal_Project_Python.pdf).
 * Improved parallelisation process so that a failed frame alignment will no longer kill the pool, and keep the code running.
 * Improved diagnostics & update printing, to state when a frame alignment has failed. 
