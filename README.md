@@ -130,14 +130,10 @@ As of v0.1 of StarTrack, the only stacking method implemented reduces noise by t
 
 The following features will be integrated into StarTrack to improve functionality:
 
-1) Improved documentation
-2) RAW data (NEF) support
-3) RGB support
-4) Improved robustness of star alignment algorithms to search multiple stars to determine the reference star
-5) Improved status logging rather than verbosity 
-6) Integrated plotting with logging system so that intermediates are plotted
-7) A new subclass called StackMethod, with methods such as sigma clipping, rejection etc. to improve stacking methods and reduce noise
-8) Addition of data calibration methods, including a new class called Dark Frame, which inherits from LightFrame, and can substract bais noise, dust spots, and remove frame vignetting
-9) New data processing techniques, such as background calibration, curves adjustments and dynamic range increase
-10) A GUI 
-
+1) Further optimisation of existing codebase, with benchmarking for memory usage and time taken for each process to run. 
+2) The addition of RGB processing capabilities. 
+3) Implementation of post-processing capabilities for final stacked images (e.g. edge detection of nebulae, and dynamic range increases to bring out features of deep space objects). 
+4) Machine Learning of final stacked image to further reduce noise using PyTorch. The aim here will be to use deep learning (Variational Autoenconders – VAE) to further reduce noise. 
+5) Statistical analysis of pixels in each layer before they are “stacked” together. This will involve understanding the distribution of each pixel and using statistical approaches to remove noise and increase signal to noise ratio. 
+6) GPU based computing to accelerate a lot of the algorithms which are currently CPU based. This will involve refactoring code to run off CuPy rather than NumPy or implementing computing with Numba. 
+7) A GUI.
