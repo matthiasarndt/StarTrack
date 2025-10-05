@@ -1,10 +1,10 @@
 ### Version 0.2.2:
 * Implemented new functionality to automatically tune the correct required threshold level when reading in a frame. This is based on the overall brightness of an image and the density of stars. This parameter is currently set manually. In a future release, threshold tuning will be further integrated to run automatically if no threshold value is specified in the initial inputs.
 * Created a slidepack detailing StarTrack and how it works, see [here](https://github.com/matthiasarndt/StarTrack/blob/main/Matthias_Arndt_Personal_Project_Python.pdf).
-* Improved parallelisation process so that a failed frame alignment will no longer kill the pool, and keep the code running.
+* Improved parallelisation process so that a failed frame alignment will no longer kill the pool, and keeps the code running.
 * Improved diagnostics & update printing, to state when a frame alignment has failed. 
-* Further reduced memory usage during stacking process by using 8 bit integers where possible, rather than 74 bit integers as before. 
-* Added new "common" class, with a logo and version number stored. This logo is now printed. 
+* Further reduced memory usage during stacking process by using 8 bit integers where possible, rather than 64 bit integers as before. 
+* Added new "common" class, with a logo and version number. This logo can now be printed. 
 * Fixed bug which meant the first addition alignment frame data wasn't being stored and used for stacking. 
 * Fixed bug which meant the reference frame and first additon alingment frame process_with_solver initialisation code wasn't running in parallel. 
 
