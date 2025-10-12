@@ -1,3 +1,5 @@
+#### Version 0.2.3 - 12/10/2025:
+
 #### Version 0.2.2 - 05/10/2025:
 * Implemented new functionality to automatically tune the correct required threshold level when reading in a frame. This is based on the overall brightness of an image and the density of stars. This parameter is currently set manually. In a future release, threshold tuning will be further integrated to run automatically if no threshold value is specified in the initial inputs.
 * Created a slidepack detailing StarTrack and how it works, see [here](https://github.com/matthiasarndt/StarTrack/blob/main/Matthias_Arndt_Personal_Project_Python.pdf).
@@ -15,7 +17,7 @@
 * Improved star_field class, with code refactoring, new functions, improved comments, and reduced results printing. 
 * Improved example.py code with new and improved comments on input settings. 
 
-#### Version 0.2.0 - 15/09/2025:
+#### Version 0.2 - 15/09/2025:
 * Implemented new star cataloguing algorithms, improving star detection by removing object and filtering objects falsely identified as a single bright star.
 * Implemented new star alignment algorithms to account for distance and angle of an alignment star from the reference alignment star, allowing for more reliable star identification.
 * Improved star alignment with new star analysis algorithms. Rather than assuming the largest star is always the reference alignment star, stars are analysed in descending order of size until a match is made. Improves robustness of image alignment and stacking for noisy images, where star size may vary significantly. 
@@ -25,5 +27,5 @@
 * Added support for more image formats: Nikon RAW (.NEF) and .PNG. 
 * General bugfixes and code improvements (refactoring, variable naming).
 
-#### Version 0.1.0 - 30/08/2025:
+#### Version 0.1 - 30/08/2025:
 - Initial working version, with AstroPhoto, CoupledFrames, and LightFrame classes.
