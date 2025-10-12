@@ -5,7 +5,7 @@
 * Download example astronomical data of the Iris Nebula [here](https://www.dropbox.com/scl/fo/mxfl3nmta319p3rljnxh4/AKRRT-tVfRIa9Q5t6UU0wQ0?rlkey=csu6ess8s3lqmrlomypvjw8cv&st=s7sd0zm0&dl=0) to try the code.
 * I have complied a brief slidepack on StarTrack [here](https://github.com/matthiasarndt/StarTrack/blob/main/Matthias_Arndt_Personal_Project_Python.pdf).
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82_reference_to_stacked.gif" width="900"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82gif" width="900"/>
 
 ## Why is StarTrack useful?
 
