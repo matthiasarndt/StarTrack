@@ -43,7 +43,7 @@
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/data_pipeline.png" width="800"/>
 
-There are three sections below, which each describe one of the main processing steps highlighted above and the respective algorithms implemented. 
+### There are three sections below, which each describe one of the main processing steps highlighted above and the respective algorithms implemented. 
 
 ## Light Frame Processing
 
