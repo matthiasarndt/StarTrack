@@ -20,19 +20,22 @@
 
 ## Why build StarTrack?
 
-### The biggest challenge in deep space astronomy imaging is noise reduction. Many nebulae, galaxies and star clusters are extremely dim, and therefore long exposures are required to adequately capture their detail. Due to the Earth's rotation it is necessary for imaging systems to be capable of tracking the night sky.
-
-As tracking errors build up, drift becomes visible in captured images. Drift can cause stars to become distorted and for images to lose depth and clarity. To overcome this, hundreds of individual images (called frames) are taken of a single object, with each being exposed for a few minutes. These frames are then "stacked" on top of each other to reduce the noise of the overall image - thereby providing the equivalent of one very long exposure. 
-
-Due to variations in tracking, none of the frames will be aligned exactly the same. There will be differences in their rotation, translation and scaling. Data collected across different geographic locations and times of the year can have particularly large variations in the relative position and rotation of a deep space object (DSO) in a frame. 
+### StarTrack aims to solve the biggest challenge in Deep Space Astronomy: reducing noise on extremely dim objects.  
+* Many nebulae, galaxies and star clusters are extremely dim, and therefore long exposures are required to adequately capture their detail.
+* Due to the Earth's rotation it is necessary for imaging systems to be capable of tracking the night sky.
+* As tracking errors build up, drift becomes visible in captured images. Drift can cause stars to become distorted and for images to lose depth and clarity.
+* To overcome this, hundreds of individual images (called frames) are taken of a single object, with each being exposed for a few minutes. These frames are then "stacked" on top of each other to reduce the noise of the overall image - thereby providing the equivalent of one very long exposure.
+* Due to variations in tracking, none of the frames will be aligned exactly the same. There will be differences in their rotation, translation and scaling. Data collected across different geographic locations and times of the year can have particularly large variations in the relative position and rotation of a deep space object (DSO) in a frame. 
 
 ## How does StarTrack solve these problems?
 
-Startrack is built to combine hundreds of individual exposures of astronomical data. It does this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
+### Startrack is built to combine hundreds of individual exposures of astronomical data. 
+
+### It does this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
 
 ## Data Pipeline
 
-Raw data goes through the following pipeline, concluding with the generation of a stacked frame. 
+### Raw data goes through the following pipeline, concluding with the generation of a stacked frame. 
 
 1. **Light Frame Processing**: All frames are imported and read in as LightFrame objects. These are processed to filter, count, and catalogue aligning stars inside an image. 
 2. **Frame Alignment**: Each of the frames (on the order of 10s-100s of images) are aligned with the reference frame, which is the initial frame that all other layers are compared against. This involves calculating reference vectors for each image and warping/translating the data to match the reference frame. 
