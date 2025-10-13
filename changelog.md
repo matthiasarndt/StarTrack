@@ -1,4 +1,12 @@
+The next version (0.2.4) will focus on reducing memory usage, by introducing memory mapped arrays, and reducing items stored in memory. It will also add the ability to reject asymmetrical stars that have been identified. Below is a change log of previous updates:
+
 #### Version 0.2.3 - 12/10/2025:
+* Implemented new functionality to process data in Red, Green and Blue channels - allowing for RGB images to be processed.
+* Integrated parameter tuning for thresholding when reading new images into wider code. The functionality to do this was introduced in the previous update (v0.2.2). 
+* Refactored the star_field class, with code restructured for improved readibility and variables renamed for better clarity. The framework for a future method to remove asymmetrical stars from dedection was also introduced. 
+* Refactored astro_photo class to split stacking and initialisation functionalities into two seperate methods.
+* Reduced memory overhead required by ensuring only required data is held in memory. 
+* Added new "utils" class, inside the light_frame class, which will be populated with commonly re-used functionality. So far the local_density_filter has been implemented.  
 
 #### Version 0.2.2 - 05/10/2025:
 * Implemented new functionality to automatically tune the correct required threshold level when reading in a frame. This is based on the overall brightness of an image and the density of stars. This parameter is currently set manually. In a future release, threshold tuning will be further integrated to run automatically if no threshold value is specified in the initial inputs.
@@ -28,4 +36,4 @@
 * General bugfixes and code improvements (refactoring, variable naming).
 
 #### Version 0.1 - 30/08/2025:
-- Initial working version, with AstroPhoto, CoupledFrames, and LightFrame classes.
+- Initial working version, with astro_photo, coupled_frames, and light_frame classes.
