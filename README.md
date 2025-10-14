@@ -29,11 +29,11 @@
 
 ## How does StarTrack solve these problems?
 
-## Startrack is built to combine hundreds of individual exposures of astronomical data - often 10s of Gigabytes of information directly from a telescope - into a single image.  
+#### Startrack is built to combine hundreds of individual exposures of astronomical data - often 10s of Gigabytes of information directly from a telescope - into a single image.  
 
-## It accomplishes this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
+#### It accomplishes this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
 
-## Data Pipeline
+#### Data Pipeline
 
 ### Raw data goes through the following pipeline, concluding with the generation of a stacked frame. 
 
