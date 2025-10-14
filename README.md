@@ -1,6 +1,6 @@
 # StarTrack
 
-### StarTrack is a modular object-oriented Python package providing functionality for Astronomical image processing, star detection, and noise reduction. 
+### StarTrack is a modular object-oriented Python package providing functionality for Astronomical computer vision, star detection, and noise reduction. 
 * Download the Python package [here](https://github.com/matthiasarndt/StarTrackRepository/tree/master).
 * Download example astronomical data of the Iris Nebula [here](https://www.dropbox.com/scl/fo/mxfl3nmta319p3rljnxh4/AKRRT-tVfRIa9Q5t6UU0wQ0?rlkey=csu6ess8s3lqmrlomypvjw8cv&st=s7sd0zm0&dl=0) to try the code.
 * I have complied a brief slidepack on StarTrack [here](https://github.com/matthiasarndt/StarTrack/blob/main/Matthias_Arndt_Personal_Project_Python.pdf).
@@ -29,9 +29,9 @@
 
 ## How does StarTrack solve these problems?
 
-### Startrack is built to combine hundreds of individual exposures of astronomical data. 
+## Startrack is built to combine hundreds of individual exposures of astronomical data - often 10s of Gigabytes of information directly from a telescope - into a single image.  
 
-### It does this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
+## It accomplishes this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
 
 ## Data Pipeline
 
