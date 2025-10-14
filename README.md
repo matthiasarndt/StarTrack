@@ -8,7 +8,7 @@
 
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82gif.gif" width="900"/>
 
-### StarTrack has been built without any Computer Vision libraries (such as OpenCV), instead relying on algorithms derived from scratch, written with NumPy, SciPy and scikit-learn. The following technologies have been implemented: 
+### StarTrack has been built with manually derived Computer Vision algorithms designed in Python, with NumPy, SciPy and scikit-learn. The following technologies have been intgrated: 
 * Object-Oriented Programming, Design Patterns (Pipeline), Inheritance & Composition
 * Unsupervised Machine Learning (sci-kit learn), to detect, register, and classify stars and Astronomical features.
 * Vectorised numerical methods and algorithms implemented with NumPy.
@@ -29,11 +29,11 @@
 
 ## How does StarTrack solve these problems?
 
-#### Startrack is built to combine hundreds of individual exposures of astronomical data - often 10s of Gigabytes of information directly from a telescope - into a single image.  
+#### Startrack is built to combine hundreds of individual exposures of astronomical data - often 10s of GigaBytes of data read in directly from a telescope - into a single image.  
 
 #### It accomplishes this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
 
-#### Data Pipeline
+## Data Pipeline
 
 ### Raw data goes through the following pipeline, concluding with the generation of a stacked frame. 
 
