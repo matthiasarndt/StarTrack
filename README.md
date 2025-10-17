@@ -6,7 +6,9 @@
 * I have complied a brief slidepack on StarTrack [here](https://github.com/matthiasarndt/StarTrack/blob/main/Matthias_Arndt_Personal_Project_Python.pdf).
 * The change log can be seen [here](https://github.com/matthiasarndt/StarTrack/blob/main/changelog.md).
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82gif.gif" width="900"/>
+<p align="center">
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82gif.gif" width="1000"/>
+</p>
 
 ### StarTrack has been built with manually derived Computer Vision algorithms designed in Python, with NumPy, SciPy and scikit-learn. The following technologies have been intgrated: 
 * Object-Oriented Programming, Design Patterns (Pipeline), Inheritance & Composition
@@ -41,7 +43,9 @@
 2. **Frame Alignment**: Each of the frames (on the order of 10s-100s of images) are aligned with the reference frame, which is the initial frame that all other layers are compared against. This involves calculating reference vectors for each image and warping/translating the data to match the reference frame. 
 3. **Stacking**: As a result of frame alignment, a 3D array of data is created, where each layer represents one input frame which has been rotated/translated to match the reference frame. Data at each pixel co-ordinate are assessed and averaged to reduce noise and remove outliers. 
 
+<p align="center">
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/data_pipeline.png" width="800"/>
+</p>
 
 ### There are three sections below, which each describe one of the main processing steps highlighted above and the respective algorithms implemented. 
 
@@ -49,19 +53,11 @@
 
 The first step is to pre-process a single frame. Data is converted to be in 8-bit monochrome, and is then thresholded (to isolate stars) and blurred (Gaussian blur), to remove the effects of noise on the shapes of stars. 
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/ProcessingPipelineExample.png" width="1100"/>
+<p align="center">
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/ProcessingPipelineExample.png" width="1000"/>
+</p>
 
 ### Image Processing Parameter Tuning
-
-Next, a filter is run across this frame. At all co-ordinates in the frame where a bright pixel is identified (defined as a pixel of brightness = 255), the area sorrounding this pixel is searched for other bright pixels. 
-
-The rationale behind this is that large stars are clusters of many bright pixels. 
-
-This search algorithm has two parameters, the search radius, and the star detection count. Star detection count is the number of bright pixels within the search radius required for the algorithm to decide a star is present. 
-
-If the number of pixels is above this threshold, it's location is stored. Once the filtering algorithm has been run, only the largest clusters of bright pixels remain. All small clusters of bright pixels are discarded. 
-
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/image_pipeline_2_crop_filtered.png" width="1100"/>
 
 ### Star Detection with Machine Learning
 
@@ -69,11 +65,11 @@ Unsupervised machine learning (k_means) is used to determine the number of stars
 
 Silhouette score measures how well defined and different clusters are from each other. To identify the number of clusters in an image, the n_clusters estimate with the highest silhouette score is used. This is an alternative to elbow method, which assesses how the centroid error varies with estimates for n_clusters.
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/stars_detected.png" width="475"/>
-
 The results from unsupervised learning are used to determine the centroids and bright pixel count (number of labels) in each cluster. This information is then plotted on the original monochrome frame, to show the n stars brightest stars which have been detected:  
 
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/step_6_stars_overlaid.png" width="1100"/>
+<p align="center">
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/stars_detected.png" width="800"/>
+</p>
 
 ### Star Registration & Rejection
 
