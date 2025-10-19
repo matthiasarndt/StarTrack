@@ -73,7 +73,9 @@ The results from unsupervised learning are used to determine the centroids and b
 
 Although the centroid information provided by unsuperivsed learning is broadly accurate, it only takes into account the brightest pixels of a star when determining it's centre. To get a more accurate estimate, which is required later during the alignment process, the following star cataloguing algorithm is used.  
 
+<p align="center">
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/star_cataloguing.png" width="800"/>
+</p>
 
 A bounding box is drawn around each cluster centroid, and a light intensity based average of the monochrome data is inside this bounding box produces the the centre of a star. This centre estimate is baesd on the brightness of all pixels around the star. 
 
@@ -85,13 +87,17 @@ This data is stored in a star catalogue, and is the main output of the image pro
 
 The largest star in the reference frame is labelled as the reference star. All other identified stars in the reference image are alignment stars. To identify these stars in other frames, the vector from each alignment star to the reference star is calculated.
 
+<p align="center">
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_reference_frame.png" width="1100"/>
+</p>
 
 In each additional frame an increased number of stars are identified. if n stars are identified in the reference frame, 2n stars are identified in each additional frame. This is to guarantee that the stars identified in the reference frame are also identified in the additional frames. Differences between frames, such as noise and the position of the target object in the frame, may change which stars are identified by the algorithms - and therefore in the additional frame more stars are identified than are needed to ensure overlap.
 
 The stars identified are then cross referenced with alignment vectors from the reference image. 
 
+<p align="center">
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_addition_frame.png" width="1100"/>
+</p>
 
 ### Frame Translation & Rotation
 
