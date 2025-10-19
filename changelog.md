@@ -2,6 +2,7 @@ The next version (0.2.5) will focus on the introduction of additional image proc
 
 #### Version 0.2.4 (October 2025):
 * Implemented memory mapped arrays to store aligned frames on a disk rather than on memory, to reduce overall memory usage whilst processing data.
+* Implemented saving of tuned parameters to .JSON files for a specific image dataset. If a user re-runs the code on this dataset, the code will ask the user if they wish to reuse previously tuned parameters - allowing for signficant time savings!
 * Refactored stacking method inside AstroPhoto to load in chunks from the memory mapped array, and process set of data at a time. 
 * Generally refactored AstroPhoto for improved clarity and breakdown of functionality, and optimised/reduced memory usage and processing.
 * Added functionality to store output final stacked frame in 16-bit format as a .TIFF. This allows for a greater amount of dynamic range to be captured from the stacking methods, and means less data will be lost as a result. 
