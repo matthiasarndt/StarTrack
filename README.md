@@ -51,13 +51,11 @@
 
 ## Light Frame Processing
 
-The first step is to pre-process a single frame. Data is converted to be in 8-bit monochrome, and is then thresholded (to isolate stars) and blurred (Gaussian blur), to remove the effects of noise on the shapes of stars. 
+Light frame processing involves numerical optimisation of search parameters for a variety of algorithms. The process is captured below. Please note this page is in development, and more details will soon be added!
 
 <p align="center">
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/ProcessingPipelineExample.png" width="1000"/>
 </p>
-
-### Image Processing Parameter Tuning
 
 ### Star Detection with Machine Learning
 
