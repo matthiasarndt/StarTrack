@@ -10,7 +10,7 @@
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82gif.gif" width="1000"/>
 </p>
 
-### StarTrack has been built with manually derived Computer Vision algorithms designed in Python, with NumPy, SciPy and scikit-learn. The following technologies have been intgrated: 
+### StarTrack has been built with manually derived Computer Vision algorithms designed in Python, with NumPy, SciPy and scikit-learn. The following technologies have been inplemented: 
 * Object-Oriented Programming, Design Patterns (Pipeline), Inheritance & Composition
 * Unsupervised Machine Learning (sci-kit learn), to detect, register, and classify stars and Astronomical features.
 * Vectorised numerical methods and algorithms implemented with NumPy.
