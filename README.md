@@ -62,9 +62,7 @@ Light frame processing involves numerical optimisation of search parameters for 
 
 ### Star Detection with Machine Learning
 
-Unsupervised machine learning (k_means) is used to determine the number of stars identified, by assessing the clusters of pixels. k_means is run for a large sweep of cluster numbers, and the silhouette score for each attempt is stored. 
-
-Silhouette score measures how well defined and different clusters are from each other. To identify the number of clusters in an image, the n_clusters estimate with the highest silhouette score is used. This is an alternative to elbow method, which assesses how the centroid error varies with estimates for n_clusters.
+Unsupervised machine learning is used to determine the number of stars identified, by labelling the resulting pixels into clusters. k_means is run for a large sweep of cluster numbers, and the silhouette score for each attempt is determined and used to identify the likely number of stars. 
 
 The results from unsupervised learning are used to determine the centroids and bright pixel count (number of labels) in each cluster. This information is then plotted on the original monochrome frame, to show the n stars brightest stars which have been detected:  
 
@@ -74,33 +72,33 @@ The results from unsupervised learning are used to determine the centroids and b
 
 ### Star Registration & Rejection
 
-Although the centroid information provided by unsuperivsed learning is broadly accurate, it only takes into account the brightest pixels of a star when determining it's centre. To get a more accurate estimate, which is required later during the alignment process, the following star cataloguing algorithm is used.  
+* Although the centroid information provided by unsuperivsed learning is broadly accurate, it only takes into account the brightest pixels of a star when determining it's centre.
+* To get a more accurate estimate, which is required later during the alignment process, the following star cataloguing algorithm is used. In some occasions, clusters of small stars are mis-identified as a single large star. Additional algorithms are employed here to accurately identify the largest star in a cluster of stars. 
+* A bounding box is drawn around each identified star, and the centre calculated based on an intensity mean average. This data is stored in a star catalogue, and is the main output of the image processing and star detection stage. The information is used in the following steps for frame alignment. 
 
 <p align="center">
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/star_cataloguing.png" width="800"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/star_cataloguing.png" width="600"/>
 </p>
 
-A bounding box is drawn around each cluster centroid, and a light intensity based average of the monochrome data is inside this bounding box produces the the centre of a star. This centre estimate is baesd on the brightness of all pixels around the star. 
+## Alignment
 
-This data is stored in a star catalogue, and is the main output of the image processing stage and star detection stage. The information is used in the following steps for star identification and frame alignment.  
+### Identifying Reference Points for Alignment using Euclidian Vector Matching Algorithms
 
-## Frame Alignment
-
-### Alignment & Correlation Stars Identification
-
-The largest star in the reference frame is labelled as the reference star. All other identified stars in the reference image are alignment stars. To identify these stars in other frames, the vector from each alignment star to the reference star is calculated.
-
-<p align="center">
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_reference_frame.png" width="1100"/>
-</p>
-
-In each additional frame an increased number of stars are identified. if n stars are identified in the reference frame, 2n stars are identified in each additional frame. This is to guarantee that the stars identified in the reference frame are also identified in the additional frames. Differences between frames, such as noise and the position of the target object in the frame, may change which stars are identified by the algorithms - and therefore in the additional frame more stars are identified than are needed to ensure overlap.
-
-The stars identified are then cross referenced with alignment vectors from the reference image. 
+All stars in a frame have their Euclidian vectors calculated in relation to all other stars:
+* In the reference frame, against which all other frames are aligned, the largest star idenfitied is used as the reference point. 
+* In all frames being aligned with the reference frame, each star is assessed from brightest to dimmest (with the brightest stars the most likely to match the reference star in the reference frame). For each star, the Euclidian vecors are compared against the vectors from the reference image.
+* Once a match is found within a tolerance, the stars identified are logged as the reference stars and the reference point matching process is ended.
+* These stars are used to align the reference and additional frames. 
 
 <p align="center">
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/alignment_addition_frame.png" width="1100"/>
 </p>
+
+Note that to increase the robustness and reliability of this algorithms, more stars in additional alignment frames are identified than in the reference frame:
+* If n stars are identified in the reference frame, 2n stars are identified in each additional alignment frame.
+* This is to guarantee that the stars identified in the reference frame are also identified in the additional frames.
+* Differences between frames, such as noise and the position of the target object in the frame, may change which stars are identified by the algorithms.
+* Therefore in the additional frame more stars are identified than are needed to ensure overlap.
 
 ### Frame Translation & Rotation
 
