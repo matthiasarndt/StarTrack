@@ -29,11 +29,14 @@
 * To overcome this, hundreds of individual images (called frames) are taken of a single object, with each being exposed for a few minutes. These frames are then "stacked" on top of each other to reduce the noise of the overall image - thereby providing the equivalent of one very long exposure.
 * Due to variations in tracking, none of the frames will be aligned exactly the same. There will be differences in their rotation, translation and scaling. Data collected across different geographic locations and times of the year can have particularly large variations in the relative position and rotation of a deep space object (DSO) in a frame. 
 
-## How does StarTrack solve these problems?
+### To do this, StarTrack combines hundreds of individual exposures of astronomical data, often 10s of GigaBytes loaded in directly from a telescope, into a single image. This image can them be processed to reveal faint features of distant galaxies & nebulae. 
 
-#### Startrack is built to combine hundreds of individual exposures of astronomical data - often 10s of GigaBytes of data read in directly from a telescope - into a single image.  
+* StarTrack does this by running object detection algorithms and thereby identifying reference points across hundreds of individual frames. Using this information, it can "stack" these frames together - aligning and combining every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
+* It can do this across many different deep space image datasets, by assessing the properties of a star field and tuning it's computer vision parameters as needed:
 
-#### It accomplishes this by running star detection algorithms, and identifying reference points across many frames, and aligning them. Using this information, it can "stack" these exposures together - identifying, aligning, and averaging every pixel in each individual frame to produce a stacked exposure which has a large reduction in noise. 
+<p align="center">
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/iris_and_horsehead.png" width="800"/>
+</p>
 
 ## Data Pipeline
 
