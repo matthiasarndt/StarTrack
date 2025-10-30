@@ -1,5 +1,10 @@
 The next version (0.2.5) will focus on the introduction of additional image processing tools (e.g. white balancing an image), a refactoring of the AstroPhoto class to introduce subclasses, and an update to the FrameReader class. 
 
+### Version 0.2.5 (November 2025):
+* Reduced memory usage for frame alignment process by ~75% by re-architecting the FrameRead and CoupledFrames class.
+* Restructured the code so that CoupledFrames is now called FrameAligner, and AstroPhoto is now called FrameStack, to better reflect the objects that are being manipulated. FrameAligner is now located within the FrameStack folder.
+* Refactored FrameAligner, introducing a new class called AlignmentVectorMatcher, replaing the existing static method with a dedicated class for matching alignment vectors between two frames. The current method is based on a rank search, and in the future additional methods will be added.  
+
 #### Version 0.2.4 (October 2025):
 * Implemented memory mapped arrays to store aligned frames on a disk rather than on memory, to reduce overall memory usage whilst processing data.
 * Implemented saving of tuned parameters to .JSON files for a specific image dataset. If a user re-runs the code on this dataset, the code will ask the user if they wish to reuse previously tuned parameters - allowing for signficant time savings!
