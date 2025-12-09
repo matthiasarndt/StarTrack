@@ -86,7 +86,7 @@ The results from unsupervised learning are used to determine the centroids and b
 
 All stars in a frame have their Euclidian vectors calculated in relation to all other stars:
 * In the reference frame, against which all other frames are aligned, the largest star idenfitied is used as the reference point. 
-* In all frames being aligned with the reference frame, each star is assessed from brightest to dimmest (with the brightest stars the most likely to match the reference star in the reference frame). For each star, the Euclidian vecors are compared against the vectors from the reference image.
+* In all frames being aligned with the reference frame, each star is assessed from brightest to dimmest (with the brightest stars the most likely to match the reference star in the reference frame). For each star, the Euclidian vectors are compared against the vectors from the reference image.
 * Once a match is found within a tolerance, the stars identified are logged as the reference stars and the reference point matching process is ended.
 * These stars are used to align the reference and additional frames. 
 
