@@ -1,6 +1,6 @@
 The next version (0.2.6) will focus on the introduction of image processing methods for stacked images (e.g. white balancing an image), and further reducing memory usage of the FrameStack class. Beyond this, 0.2.7 will include improved star rejection and registration algorithms/update logging. The focus after this will be on version 0.3, which will include a general expansion of the codebase' capabilities now that the overall structure has been ironed out. 
 
-### Version 0.2.5 - November 2025:
+#### Version 0.2.5 - November 2025:
 * Reduced memory usage for frame alignment process by ~75% by re-architecting the FrameRead and CoupledFrames class. This includes only reading RGB data when required, and otherwise not storing it on memory.
 * Introduced memory profiling to better understand which sections of the code are the most RAM intensive.  
 * Restructured the code so that CoupledFrames is now called FrameAligner, and AstroPhoto is now called FrameStack, to better reflect the objects that are being manipulated. FrameAligner is now located within the FrameStack folder.
