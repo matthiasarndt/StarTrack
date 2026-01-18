@@ -7,7 +7,7 @@
 * The change log can be seen [here](https://github.com/matthiasarndt/StarTrack/blob/main/changelog.md).
 
 <p align="center">
-<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82_before_after_gif.gif" width="1000"/>
+<img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82_before_after_gif.gif" width="800"/>
 </p>
 
 ### StarTrack has been built with manually derived Computer Vision algorithms designed in Python, with NumPy, SciPy and scikit-learn. The following technologies have been inplemented: 
