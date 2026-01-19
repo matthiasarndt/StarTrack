@@ -1,4 +1,9 @@
-The next version (0.2.6) will focus on the introduction of image processing methods for stacked images (e.g. white balancing an image), and further reducing memory usage of the FrameStack class. Beyond this, 0.2.7 will include improved star rejection and registration algorithms/update logging. The focus after this will be on version 0.3, which will include a general expansion of the codebase' capabilities now that the overall structure has been ironed out. 
+#### Vesion 0.3.0 - January 2026
+* Introduced new StackedImage module, which provides image processing capabilities to stacked images produced by the FrameStack class.
+* Implemented colour correction, background identification, vignette removal, and dynamcic range adjustment codes.
+* Background identification has been implemented with 5D HDBSCAN clustering to identify regions of similarity.
+* Vignette remvoal has been designed using least squares curve fitting algorithms to approximate the curvature of an image.
+* Improved general legibility of code with docstrings and comments. 
 
 #### Version 0.2.5 - November 2025:
 * Reduced memory usage for frame alignment process by ~75% by re-architecting the FrameRead and CoupledFrames class. This includes only reading RGB data when required, and otherwise not storing it on memory.
