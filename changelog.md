@@ -1,4 +1,12 @@
-#### Vesion 0.3.0 - January 2026
+#### Version 0.3.1 - March 2026
+* Renamed StackedImage to PostProcessor.
+* Introduced "parameter_config" JSON file, to store parameters used throughout the code including tuning parameters and stack parameters (size
+* Refactored LightFrame to split functionality into private methods and improve legibility. 
+* Fixed bug causing automatic threshold tuning process in LightFrame to throw an error. 
+* Created denoiser module (currently empty). This will include the following objects for CNN deep learning for denoising: dataset, model, train, inference. 
+* Improved general legibility of code with docstrings and comments. 
+
+#### Version 0.3.0 - January 2026
 * Introduced new StackedImage module, which provides image processing capabilities to stacked images produced by the FrameStack class.
 * Implemented colour correction, background identification, vignette removal, and dynamcic range adjustment codes.
 * Background identification has been implemented with 5D HDBSCAN clustering to identify regions of similarity.
