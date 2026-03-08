@@ -1,8 +1,16 @@
+
+#### Version 0.3.2 - March 2026
+* Created FrameTuner, a module responsible for all LightFrame hyperparameter tuning, under the FrameStack module.
+* Moved all tuning logic from LightFrame to FrameTuner.
+* Refactored FrameStack to integrate the new FrameTuner module.
+* Reduced the tolerance required for the bisection optimisation solver logic in FrameTuner to converge, resulting in faster optimisation of LightFrame hyperparameters. 
+* Improved general legibility of code with docstrings and comments. 
+
 #### Version 0.3.1 - March 2026
 * Renamed StackedImage to PostProcessor.
 * Introduced "parameter_config" JSON file, to store parameters used throughout the code including tuning parameters and stack parameters (size
 * Refactored LightFrame to split functionality into private methods and improve legibility. 
-* Fixed bug causing automatic threshold tuning process in LightFrame to throw an error. 
+* Fixed bug causing automatic threshold tuning process in LightFrame to produce an error. 
 * Created denoiser module (currently empty). This will include the following objects for CNN deep learning for denoising: dataset, model, train, inference. 
 * Improved general legibility of code with docstrings and comments. 
 
