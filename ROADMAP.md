@@ -4,7 +4,7 @@
 The main focus for V0.3 is the introduction of the PostProcessor module, which was introduced with 0.3.0. In addition to this, there are general docstring improvements, some structural changes, and the introduction of a configuration database to store important variables required between modules. 
 
 #### Version 0.3.3
-* Improved colour calibration module, using cumulative distribution function matching to align RGB channels. The current approach works well for aligning R/G to B (dominant when light pollution is heavy), but does not extent well to R channel.
+* Improved colour calibration module, using cumulative distribution function matching to align RGB channels. The current approach works well for aligning R/G to B (dominant when light pollution is heavy), but does not extend well to R channel.
 * Improved background neutralisation by improving least squares 2D curve fitting of lens distortions to take into account linear gradients caused by light pollution. 
 * Built-in visualisation functionality of histograms. 
 
