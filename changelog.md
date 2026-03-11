@@ -8,7 +8,7 @@
 
 #### Version 0.3.1 - March 2026
 * Renamed StackedImage to PostProcessor.
-* Introduced "parameter_config" JSON file, to store parameters used throughout the code including tuning parameters and stack parameters (size
+* Introduced "parameter_config" JSON file, to store parameters used throughout the code including tuning parameters and stack parameters (dimensions, location etc.)
 * Refactored LightFrame to split functionality into private methods and improve legibility. 
 * Fixed bug causing automatic threshold tuning process in LightFrame to produce an error. 
 * Created denoiser module (currently empty). This will include the following objects for CNN deep learning for denoising: dataset, model, train, inference. 
