@@ -10,7 +10,7 @@ The main focus for V0.3 is the introduction of the PostProcessor module, which w
 
 #### Version 0.3.4
 * Introduction of central config/database module inside the top level common folder.
-* This will better link together source of information, e.g. dimensions of stack, tuned parameters, which are already stored in JSON files (stack parameter saving was introduced in 0.3.1).
+* This will better link together sources of information, e.g. dimensions of stack, tuned parameters, which are already stored in JSON files (stack parameter saving was introduced in 0.3.1).
 
 ### Version 0.4
 The main focus for V0.4 is the introduction of a denoiser module, built using PyTorch with a CNN architecture. This will have the following modules:
