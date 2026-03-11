@@ -1,3 +1,4 @@
+# Change Log
 
 #### Version 0.3.2 - March 2026
 * Created FrameTuner, a module responsible for all LightFrame hyperparameter tuning, under the FrameStack module.
