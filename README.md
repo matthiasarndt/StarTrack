@@ -108,15 +108,5 @@ An affine transformation has been used because images captured from an optical t
 
 ## Stacking
 
-As of v0.1 of StarTrack, the only stacking method implemented reduces noise by taking a mean average of all aligned frames. Future releases will include other stacking methods which will reject pixels not within a set number of standard deviations from the mean (a technique called sigma clipping).
+As of v0.3.3 of StarTrack, the only stacking method implemented reduces noise by taking a mean average of all aligned frames. Future releases will include other stacking methods which will reject pixels not within a set number of standard deviations from the mean (a technique called sigma clipping).
 
-## Future Features Roadmap
-
-The following features will be integrated into StarTrack to improve functionality:
-
-1) Further optimisation of existing codebase, with benchmarking for memory usage and time taken for each process to run. 
-2) Implementation of post-processing capabilities for final stacked images (e.g. edge detection of nebulae, and dynamic range increases to bring out features of deep space objects). 
-3) Machine Learning of final stacked image to further reduce noise using PyTorch. The aim here will be to use deep learning (Variational Autoenconders – VAE) to further reduce noise. 
-4) Statistical analysis of pixels in each layer before they are “stacked” together. This will involve understanding the distribution of each pixel and using statistical approaches to remove noise and increase signal to noise ratio. 
-5) GPU based computing to accelerate a lot of the algorithms which are currently CPU based. This will involve refactoring code to run off CuPy rather than NumPy or implementing computing with Numba. 
-6) A GUI.
