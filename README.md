@@ -4,7 +4,7 @@
 * Download the Python package here: [github.com/matthiasarndt/StarTrackRepository](https://github.com/matthiasarndt/StarTrackRepository/tree/master).
 * Download example astronomical data of the Iris Nebula [here](https://www.dropbox.com/scl/fo/mxfl3nmta319p3rljnxh4/AKRRT-tVfRIa9Q5t6UU0wQ0?rlkey=csu6ess8s3lqmrlomypvjw8cv&st=s7sd0zm0&dl=0) to try the code.
 * I have complied a brief slidepack on StarTrack [here](https://github.com/matthiasarndt/StarTrack/blob/main/Matthias_Arndt_Personal_Project_Python.pdf).
-* The change log can be seen [here](https://github.com/matthiasarndt/StarTrack/blob/main/changelog.md).
+* The change log can be seen [here](https://github.com/matthiasarndt/StarTrack/blob/main/CHANGELOG.md).
 
 <p align="center">
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82_before_after_gif.gif" width="800"/>
