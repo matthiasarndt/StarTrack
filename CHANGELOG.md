@@ -3,7 +3,7 @@
 #### Version 0.3.3 - March 2026
 * Introduced new colour calibration algorithms.
 * Implemented cumulative distribution matching functionality to align RGB channels. This approach works well for aligning colour channels to restore overall white balance for cameras that have been modified.
-* The existing colour calibration method from v0.3.0, now called neutralise_background, has been refactored to focus on removing the effect of light pollution. Otherwise the method is unchanged. 
+* The existing colour calibration method from v0.3.0 has been renamed to neutralise_background. It has been refactored to focus on removing the effect of light pollution. Otherwise the method is unchanged. 
 * Improved background neutralisation by improving least squares 2D curve fitting of lens distortions to take into account linear gradients caused by light pollution.
 * Built-in visualisation functionality for histograms.
 
