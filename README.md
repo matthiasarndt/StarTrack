@@ -11,6 +11,8 @@ StarTrack is a modular object-oriented Python package providing functionality fo
 <img src="https://github.com/matthiasarndt/StarTrack/blob/main/figures/m82_before_after_gif.gif" width="800"/>
 </p>
 
+An example GIF showing a single noisy input frame, which is then aligned and stacked against ~100 other frames to produce a denoised image, and is then colour-corrected with a built-in post processor!
+
 ## How has it been built? 
 
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
