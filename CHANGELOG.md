@@ -1,5 +1,13 @@
 # Change Log
 
+#### Version 0.3.4 - March 2026
+* Introduced new "Config" module inside common for maintaining and documenting parameters for a specific dataset, e.g. tuned hyperparameters, solver parameters, and memory-mapped array sizes. This data will be required tor integration of the future denoising module into the wider codebase.
+* Introduced functionality within "Config" module to write object attributes, such as the parameters listed above, to a JSON file. 
+* Integrated parameter config into frame_stack module. 
+* Renamed coupled_frames to frame_aligner to better represent its functionality.
+* Reduced runtime of frame_stack code by optimising the class' __init__ method.
+* Improved general legibility of code with docstrings and comments. 
+
 #### Version 0.3.3 - March 2026
 * Introduced new colour calibration algorithms.
 * Implemented cumulative distribution matching functionality to align RGB channels. This approach works well for aligning colour channels to restore overall white balance for cameras that have been modified.
@@ -16,7 +24,6 @@
 
 #### Version 0.3.1 - March 2026
 * Renamed StackedImage to PostProcessor.
-* Introduced "parameter_config" JSON file, to store parameters used throughout the code including tuning parameters and stack parameters (dimensions, location etc.)
 * Refactored LightFrame to split functionality into private methods and improve legibility. 
 * Fixed bug causing automatic threshold tuning process in LightFrame to produce an error. 
 * Created denoiser module (currently empty). This will include the following objects for CNN deep learning for denoising: dataset, model, train, inference. 
