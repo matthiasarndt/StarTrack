@@ -1,6 +1,6 @@
 # Change Log
 
-#### Version 0.3.4 - March 2026
+#### Version 0.3.4 - April 2026
 * Introduced new "Config" module inside common for maintaining and documenting parameters for a specific dataset, e.g. tuned hyperparameters, solver parameters, and memory-mapped array sizes. This data will be required tor integration of the future denoising module into the wider codebase.
 * Introduced functionality within "Config" module to write object attributes, such as the parameters listed above, to a JSON file. 
 * Integrated parameter config into frame_stack module. 
