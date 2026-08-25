@@ -1,5 +1,9 @@
 # Change Log
 
+#### Version 0.3.5 - August 2026
+* Introduced new IntegrationMethods module, expanding the number of methods in which the FrameStack can be integrated to produce a stacked image. Currently mean and median have been implemented, with sigma_gamma_clip and weighted_mean being planned for future releases.
+* Introduced new Utils module inside of Common, moving several static methods outside of FrameStack, future proofing the codebase for future refactoring. 
+
 #### Version 0.3.4 - April 2026
 * Introduced new "Config" module inside common for maintaining and documenting parameters for a specific dataset, e.g. tuned hyperparameters, solver parameters, and memory-mapped array sizes. This data will be required tor integration of the future denoising module into the wider codebase.
 * Introduced functionality within "Config" module to write object attributes, such as the parameters listed above, to a JSON file. 
