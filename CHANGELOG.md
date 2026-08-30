@@ -1,7 +1,18 @@
 # Change Log
 
+#### 0.3.8 - August 2026
+* Added regression_test.py script to test light_frame initialisation. 
+* Moved kmeans blob counting method from star_field to blob_extraction, and modified star_field to handle new structure. 
+* Introduced geometry module inside astrometry, moving vector calculation fucntions here. Modified light_frame to handle new changes.
+* Renamed frame_reader to frame_loader, and renamed light_frame package to frames as in future dark_frames and calibration_frames will live here too. 
+
+#### 0.3.7 - August 2026
+* Moved flood fill blob counting methods from star_field.py to blob_extraction, and modified star_field to handle new structure.
+* Deleted star_filter from light_frame as all functionality is now captured inside blob_extraction with identify_pixels_in_blobs() function. 
+
 #### 0.3.6 - August 2026
-* Introduced astrometry module, which will house all foundational blob and pixel analysis logic which is currently held inside light_frame, to reduce the complexity of light_frame. 
+* Introduced astrometry package, which will house all foundational blob and pixel analysis logic which is currently held inside light_frame, to reduce the complexity of light_frame.
+* Moved logic from star_filter to blob_extraction (inside astrometry).  
 * Renamed utils to blob_extraction, and renamed local_density_filter to identify_pixels_in_blobs.
 
 #### 0.3.5 - August 2026
