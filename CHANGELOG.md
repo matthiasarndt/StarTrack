@@ -2,8 +2,8 @@
 
 #### 0.3.8 - August 2026
 * Added regression_test.py script to test light_frame initialisation. 
-* Moved kmeans blob counting method from star_field to blob_extraction, and modified star_field to handle new structure. 
-* Introduced geometry module inside astrometry, moving vector calculation fucntions here. Modified light_frame to handle new changes.
+* Moved kmeans blob counting method from star_field to blob_extraction, and refactored star_field count_stars() method to handle changes. 
+* Introduced geometry module inside astrometry, moving vector calculation functions here. Modified light_frame to handle new changes.
 * Renamed frame_reader to frame_loader, and renamed light_frame package to frames as in future dark_frames and calibration_frames will live here too. 
 
 #### 0.3.7 - August 2026
